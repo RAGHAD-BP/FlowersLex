@@ -48,7 +48,10 @@ app.post('/api/feedback', async (req, res) => {
     });
 
     // Save to MongoDB
-    await newFeedback.save();
+    // await newFeedback.save();
+    const saved = await newFeedback.save();
+console.log("Saved feedback:", saved);
+
 
     res.status(201).json({
       message: 'Feedback submitted successfully',
