@@ -40,9 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
         message,
         category,
       };
+const SERVER_URL = "https://flowerslex.onrender.com"; 
 
       try {
-        const response = await fetch("http://localhost:5000/api/feedback", {
+        const response = await fetch('${SERVER_URL}/api/feedback', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
