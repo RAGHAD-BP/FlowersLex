@@ -73,8 +73,11 @@ async function start() {
     await mongoose.connect(process.env.MONGODB_URI);
     console.log('Connected to MongoDB Atlas');
 
-    app.listen(PORT, () => {
-      console.log(`Server running at: http://localhost:${PORT}`);
+    // ⭐⭐⭐ تعديل مهم جداً لـ Render ⭐⭐⭐
+    // Render يحتاج السيرفر يسمع على 0.0.0.0 وليس localhost
+    // حتى يقدر يفتح البورت للعالم الخارجي
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`Server running on port ${PORT}`);
     });
 
   } catch (err) {
