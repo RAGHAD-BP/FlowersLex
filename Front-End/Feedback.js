@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         message,
         category,
       };
+      
 const SERVER_URL = "https://flowerslex.onrender.com"; 
 
       try {
